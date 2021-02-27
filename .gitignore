@@ -1,0 +1,4 @@
+venv/
+.idea/
+data/faces/*
+test_token.cache
