@@ -19,7 +19,7 @@ def otp_callback():
     return auth_code
 
 
-def main():
+def main(download_only=False):
     if cache_file.is_file():
         auth = Auth("MyProject/1.0", json.loads(cache_file.read_text()), token_updated)
     else:
@@ -39,7 +39,7 @@ def main():
     wait_for_update(ring)
 
 
-def wait_for_update(ring):
+def wait_for_update(ring, download_only=False):
     id = -1
     start = time.time()
     while True:
@@ -56,6 +56,9 @@ def wait_for_update(ring):
             id = current_id
             print('[INFO] finished search in:',str(time.time()-start))
             start = time.time()
+            if download_only:
+                handle_video(ring,True)
+                return
             handle = handle_video(ring)
             if handle:
                 print(handle)

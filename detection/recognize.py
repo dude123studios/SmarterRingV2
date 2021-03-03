@@ -21,9 +21,9 @@ def recognize(img):
     people = [preprocess(person) for person in people]
     encoded = [encode(person) for person in people]
     database = {}
-    for person_path in os.listdir('data/faces/'):
-        for image_path in os.listdir('data/faces/' + person_path):
-            final_path = 'data/faces/' + person_path + '/' + image_path
+    for person_path in os.listdir('data/encoded/'):
+        for image_path in os.listdir('data/encoded/' + person_path):
+            final_path = 'data/encoded/' + person_path + '/' + image_path
             img = np.load(final_path, allow_pickle=True)
             database[final_path] = img
     strengths = []
@@ -35,9 +35,10 @@ def recognize(img):
             if dist < best:
                 best = dist
                 best_name = k.split('/')[-2]
-        if best > 0.4:
+            print(dist)
+        if best > 0.00003:
             best_name = 'UNKNOWN'
         best_people.append(best_name)
         strengths.append(best)
-    print(strengths)
+    #print(strengths)
     return best_people

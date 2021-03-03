@@ -22,3 +22,14 @@ def get_first_frame(video_path):
     success, image = vidcap.read()
     if success:
         return image
+
+
+def get_specific_frames(video_path, times):
+    vidcap = cv2.VideoCapture(video_path)
+    frames = []
+    for time in times:
+        vidcap.set(1, time * 15)
+        success, image = vidcap.read()
+        if success:
+            frames.append(image)
+    return frames

@@ -1,10 +1,12 @@
 import cv2
 from detection.mtcnn_detector import detect_and_draw_boxes
+import time
 cam = cv2.VideoCapture(0)
 
 cv2.namedWindow("Your Face!")
 cv2.namedWindow("Detected")
 while True:
+    time.sleep(0.2)
     ret, frame = cam.read()
     if not ret:
         print("[ERROR] failed to grab frame")

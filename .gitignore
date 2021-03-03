@@ -1,4 +1,6 @@
 venv/
 .idea/
 data/faces/*
+data/encoded/*
 test_token.cache
+last_ding.mp4

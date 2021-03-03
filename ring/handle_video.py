@@ -3,7 +3,7 @@ from utils import get_first_frame
 from detection.recognize import recognize
 
 
-def handle_video(ring):
+def handle_video(ring, download_only=False):
     devices = ring.devices()
     doorbell = devices['authorized_doorbots'][0]
     start = time.time()
@@ -12,6 +12,8 @@ def handle_video(ring):
         filename='last_ding.mp4',
         override=True)
     print('[INFO] finished download in:', str(time.time() - start))
+    if download_only:
+        return
     start = time.time()
     frame = get_first_frame('last_ding.mp4')
     #os.remove('last_ding.mp4')
@@ -27,3 +29,5 @@ def handle_video(ring):
         return_string = return_string + person + ', '
     return_string = return_string + 'Are/Is at the door!'
     return return_string
+
+
