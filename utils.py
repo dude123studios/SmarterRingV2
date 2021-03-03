@@ -9,11 +9,10 @@ def normalize(img):
 def preprocess(cv2_img):
     cv2_img = normalize(cv2_img)
     cv2_img = cv2.resize(cv2_img, (160, 160))
-    cv2_img = cv2_img / 127.5 - 1
     return cv2_img
 
 
-frame_of_ring = 15 * 7
+frame_of_ring = 15 * 6
 
 
 def get_first_frame(video_path):

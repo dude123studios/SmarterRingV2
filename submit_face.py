@@ -35,11 +35,4 @@ while True:
         if not os.path.exists(img_dir):
             os.mkdir(img_dir)
         cv2.imwrite(img_dir + str(len(os.listdir(img_dir))) + '.jpg', img)
-        img = preprocess(img)
-        encoded = encode(img)
-        dir = 'data/encoded/' + args.name + '/'
-        if not os.path.exists(dir):
-            os.mkdir(dir)
-        with open(dir + str(len(os.listdir(dir))) + '.npy', 'wb') as f:
-            np.save(f, encoded)
         print('[INFO] {} Saved Successfully'.format(args.name))

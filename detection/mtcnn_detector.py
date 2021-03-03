@@ -1,6 +1,6 @@
 import cv2
 import mtcnn
-from detection.recognize import recognize
+from detection import recognize
 
 face_detector = mtcnn.MTCNN()
 conf_t = 0.99
@@ -35,7 +35,7 @@ def detect_face(cv2_img):
 
 def detect_and_draw_boxes(cv2_img):
     img_rgb = cv2.cvtColor(cv2_img, cv2.COLOR_BGR2RGB)
-    people = recognize(cv2_img)
+    people = recognize.recognize(cv2_img)
     results = face_detector.detect_faces(img_rgb)
     if not results or people is None:
         return cv2_img

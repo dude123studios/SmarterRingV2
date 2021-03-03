@@ -4,7 +4,11 @@ import numpy as np
 from scipy.spatial.distance import cosine
 import os
 from detection import mtcnn_detector
+import pickle
+from sklearn.preprocessing import Normalizer
 import cv2
+
+l2_normalizer = Normalizer('l2')
 
 
 def encode(img):
@@ -13,6 +17,11 @@ def encode(img):
     return out
 
 
+def load_database():
+    with open('data/encodings/encoding.pkl', 'rb') as f:
+        database = pickle.load(f)
+    return database
+
 def recognize(img):
     people = mtcnn_detector.detect_faces(img)
     if len(people) == 0:
@@ -20,13 +29,10 @@ def recognize(img):
     best_people = []
     people = [preprocess(person) for person in people]
     encoded = [encode(person) for person in people]
-    database = {}
-    for person_path in os.listdir('data/encoded/'):
-        for image_path in os.listdir('data/encoded/' + person_path):
-            final_path = 'data/encoded/' + person_path + '/' + image_path
-            img = np.load(final_path, allow_pickle=True)
-            database[final_path] = img
+    encoded = [l2_normalizer.transform(encoding.reshape(1, -1))[0]
+               for encoding in encoded]
     strengths = []
+    database = load_database()
     for person in encoded:
         best = 1
         best_name = ''
@@ -34,11 +40,10 @@ def recognize(img):
             dist = cosine(person, v)
             if dist < best:
                 best = dist
-                best_name = k.split('/')[-2]
-            print(dist)
-        if best > 0.00003:
+                best_name = k
+        if best > 0.2:
             best_name = 'UNKNOWN'
         best_people.append(best_name)
         strengths.append(best)
-    #print(strengths)
+    print(strengths)
     return best_people

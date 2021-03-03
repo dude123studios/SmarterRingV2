@@ -5,3 +5,4 @@ ring_doorbell==0.7.0
 oauthlib~=3.1.0
 numpy~=1.19.5
 scipy~=1.6.1
+scikit-learn==0.24.1
