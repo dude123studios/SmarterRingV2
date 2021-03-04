@@ -1,5 +1,5 @@
 import cv2
-from detection.mtcnn_detector import detect_and_draw_boxes
+from face_recognition import detect_and_draw_boxes
 import time
 cam = cv2.VideoCapture(0)
 

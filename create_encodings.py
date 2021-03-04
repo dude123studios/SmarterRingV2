@@ -3,7 +3,7 @@ from utils import preprocess
 import cv2
 import numpy as np
 from sklearn.preprocessing import Normalizer
-from detection import recognize
+import face_recognition
 import pickle
 
 encoding_dict = {}
@@ -18,7 +18,7 @@ for face_names in os.listdir('data/faces/'):
         face = cv2.imread(image_path)
 
         face = preprocess(face)
-        encoding = recognize.encode(face)
+        encoding = face_recognition.encode(face)
         encodes.append(encoding)
 
     if encodes:
