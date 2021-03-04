@@ -6,6 +6,7 @@ from ring_doorbell import Ring, Auth
 from oauthlib.oauth2 import MissingTokenError
 from ring.handle_video import handle_video
 import time
+from ring.tts_handler import text_to_speech
 
 cache_file = Path("test_token.cache")
 
@@ -49,7 +50,7 @@ def wait_for_update(ring, download_only=False):
         except:
             continue
         doorbell = ring.devices()['authorized_doorbots'][0]
-        for event in doorbell.history(limit=15, kind='ding'):
+        for event in doorbell.history(limit=50, kind='ding'):
             current_id = event['id']
             break
         if current_id != id:
@@ -61,4 +62,6 @@ def wait_for_update(ring, download_only=False):
                 return
             handle = handle_video(ring)
             if handle:
-                print(handle)
+                text_to_speech(handle)
+            else:
+                text_to_speech('The person at the door is not very clear')

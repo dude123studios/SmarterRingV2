@@ -6,3 +6,5 @@ oauthlib~=3.1.0
 numpy~=1.19.5
 scipy~=1.6.1
 scikit-learn==0.24.1
+gtts==2.2.2
+playsound~=1.2.2

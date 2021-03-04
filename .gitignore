@@ -4,3 +4,4 @@ data/faces/*
 data/encoded/*
 test_token.cache
 last_ding.mp4
+tts_file.mp3

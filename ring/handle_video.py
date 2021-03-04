@@ -21,13 +21,17 @@ def handle_video(ring, download_only=False):
         people = recognize(frame)
         print('[INFO] finished detection in:', str(time.time() - start))
         if people is None:
+            print('No one was detected')
             return None
     except LookupError:
         return None
-    return_string = '[OUTPUT] '
+    return_string = ''
     for person in people:
-        return_string = return_string + person + ', '
-    return_string = return_string + 'Are/Is at the door!'
+        return_string += (person + ', ')
+    if len(people) == 1:
+        return_string += 'is at the door'
+    else:
+        return_string += 'are at the door'
     return return_string
 
 

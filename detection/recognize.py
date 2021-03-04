@@ -22,6 +22,10 @@ def load_database():
         database = pickle.load(f)
     return database
 
+
+recog_t = 0.35
+
+
 def recognize(img):
     people = mtcnn_detector.detect_faces(img)
     if len(people) == 0:
@@ -41,7 +45,7 @@ def recognize(img):
             if dist < best:
                 best = dist
                 best_name = k
-        if best > 0.2:
+        if best > recog_t:
             best_name = 'UNKNOWN'
         best_people.append(best_name)
         strengths.append(best)
