@@ -22,7 +22,7 @@ def load_database():
     return database
 
 
-recog_t = 0.35
+recog_t = 0.4
 
 
 def recognize(img):
@@ -34,7 +34,6 @@ def recognize(img):
     encoded = [encode(person) for person in people]
     encoded = [l2_normalizer.transform(encoding.reshape(1, -1))[0]
                for encoding in encoded]
-    strengths = []
     database = load_database()
     for person in encoded:
         best = 1
@@ -45,10 +44,8 @@ def recognize(img):
                 best = dist
                 best_name = k
         if best > recog_t:
-            best_name = 'UNKNOWN'
+            best_name = 'unknown'
         best_people.append(best_name)
-        strengths.append(best)
-    print(strengths)
     return best_people
 
 

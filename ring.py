@@ -1,7 +1,6 @@
 import os
 import json
 from pathlib import Path
-from pprint import pprint
 from ring_doorbell import Ring, Auth
 from oauthlib.oauth2 import MissingTokenError
 import time
@@ -38,7 +37,6 @@ def main(download_only=False):
     ring.update_data()
 
     devices = ring.devices()
-    pprint(devices)
     wait_for_update(ring)
 
 
@@ -68,7 +66,6 @@ def wait_for_update(ring, download_only=False):
             else:
                 text_to_speech('The person at the door is not very clear')
         time.sleep(1)
-
 
 
 def handle_video(ring, download_only=False):
@@ -101,6 +98,7 @@ def handle_video(ring, download_only=False):
     else:
         return_string += 'are at the door'
     return return_string
+
 
 language = 'en'
 slow_audio_speed = False
