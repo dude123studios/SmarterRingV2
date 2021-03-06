@@ -12,17 +12,6 @@ def preprocess(cv2_img):
     return cv2_img
 
 
-frame_of_ring = 15 * 6
-
-
-def get_first_frame(video_path):
-    vidcap = cv2.VideoCapture(video_path)
-    vidcap.set(1, frame_of_ring)
-    success, image = vidcap.read()
-    if success:
-        return image
-
-
 def get_specific_frames(video_path, times):
     vidcap = cv2.VideoCapture(video_path)
     frames = []
