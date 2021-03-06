@@ -18,4 +18,3 @@ while True:
         print("[INFO] Escape hit, closing...")
         break
     cv2.imshow("Detected",detect_and_draw_boxes(frame))
-

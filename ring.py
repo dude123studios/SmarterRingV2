@@ -4,12 +4,13 @@ from pathlib import Path
 from ring_doorbell import Ring, Auth
 from oauthlib.oauth2 import MissingTokenError
 import time
-from utils import get_first_frame
+from utils import get_specific_frames
 from face_recognition import recognize
 from gtts import gTTS
 from playsound import playsound
 
 cache_file = Path("test_token.cache")
+times = [5, 10, 15]
 
 
 def token_updated(token):
@@ -36,8 +37,7 @@ def main(download_only=False):
     ring = Ring(auth)
     ring.update_data()
 
-    devices = ring.devices()
-    wait_for_update(ring)
+    wait_for_update(ring, download_only=download_only)
 
 
 def wait_for_update(ring, download_only=False):
@@ -80,18 +80,22 @@ def handle_video(ring, download_only=False):
     if download_only:
         return
     start = time.time()
-    frame = get_first_frame('last_ding.mp4')
+    frames = get_specific_frames('last_ding.mp4', times)
     # os.remove('last_ding.mp4')
-    try:
+    for frame in frames:
         people = recognize(frame)
         print('[INFO] finished detection in:', str(time.time() - start))
         if people is None:
-            print('No one was detected')
-            return None
-    except LookupError:
+            continue
+        else:
+            break
+    if people is None:
         return None
     return_string = ''
-    for person in people:
+    for i, person in enumerate(people):
+        if (i == len(people)-1) and (len(people) is not 1):
+            return_string += ('and '+person)
+            break
         return_string += (person + ', ')
     if len(people) == 1:
         return_string += 'is at the door'

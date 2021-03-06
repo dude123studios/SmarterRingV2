@@ -2,14 +2,14 @@
 # SmarterRingV2
 Ring but cooler V2.0
 
-This is an expiremental hack using an unnoficial ring api. When someone is at the door, and this program is running, You will be notified who it is.
+This is an experimental hack using an unofficial ring api. When someone is at the door, and this program is running, You will be notified who it is.
 For you to use this with your own ring, follow the following simple steps
 
 Create Environment variables USERNAME and PASSWORD, and set them to your ring account password
 
 run (Multiple times):
-**$python submit_face.py NAME**
-Where NAME is the name of the person whos images you would like to enter.
+**$python submit_face.py name from_door**
+Where NAME is the name of the person who's images you would like to enter.
 Stand outside with lighting similar to that of your ring's view.
 Record 3-5 images per person 
 Account for different lighting conditions and different times of day
