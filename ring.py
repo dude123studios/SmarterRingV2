@@ -94,7 +94,7 @@ def handle_video(ring, download_only=False):
     return_string = ''
     for i, person in enumerate(people):
         if (i == len(people)-1) and (len(people) is not 1):
-            return_string += ('and '+person)
+            return_string += ('and '+person+' ')
             break
         return_string += (person + ', ')
     if len(people) == 1:
