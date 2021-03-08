@@ -1,13 +1,3 @@
-
-## Synopsis
-_Face Recognition_ is **huge**. With the ability to automatically classify someone, many useful prducts have been created. For example, to unlock the new _IPhones_ all you need is to display your face. This single handedly shows how strong our technology has come. Millions rely on a deep clustering model to protect all of their private information and other smart phone data. With the new _Amazon Ring_, I was disapointed that it didn't have this common feature. So I decided to create it myself! Read my medium blog on the subject. This repository can be used on your own _Amazon Ring_ in just a couple of steps!
-
-## Example
-
-## Motivation
-For the last year, I have been researching _deep learning_ and have learned a lot about Transformers, GANs, MLPs, RNNs, LSTMs, ConvNets, and other major deep learning architectures. After recently moving to a new house and purchasing a _Amazon Ring_ doorbell, I thought that it would be a fun project to apply deep learning from end-to-end.
-
-
 # SmarterRingV2
 
 ![Project Image](MEDIA/cover)
@@ -64,14 +54,14 @@ or:
   $python submit_face.py name True
 ```
 In the first case, a popup will show on your screen using your webcam. Hit the space bar when ready to record an image of "name". Do so multiple times from different angles. Once done, hit the escape button to close the program. 
-In the second case, data will be grabbed directly from your ring doorbell."name" is the name of the person who was at your doorbell last when it was rung. This method will reach higher accuracy. 
-**Encode Data**
+In the second case, data will be grabbed directly from your ring doorbell."name" is the name of the person who was at your doorbell last when it was rung. This method will reach higher accuracy.   
+**Encode Data**  
 Once all the images are in, run:
 ```venv
   $python create_encodings.py
 ```
 This will simply encode your data.
-**Run**
+**Run**  
 Finally, to run the program, run:
 ```venv
   $python main.py
