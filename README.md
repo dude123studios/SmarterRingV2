@@ -70,9 +70,8 @@ Finally, to run the program, run:
 Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
 #### API Reference
 
-A complete documention is explained in my medium article.  
-If you are interesested, you can veiw to documentations to the following dependencies 
-[Requirements](#requirements.txt)
+A complete documention is explained in my medium article. If you are interesested, you can veiw to documentations to the following dependencies    
+![Requirements](#requirements.txt)  
 [Back To The Top](#SmarterRingV2)
 ---
 
