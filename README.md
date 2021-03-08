@@ -30,6 +30,9 @@ _Face Recognition_ is **huge**. With the ability to automatically classify someo
 - Computer Vision 
 - Face Recognition  
 
+If you are interested in _FaceNet_ the model used in this repository, the following diagram illustrates it:
+![Architecture](MEDIA/Architecture.png)
+
 [Back To The Top](#SmarterRingV2)
 
 ---
@@ -65,7 +68,7 @@ Once all the images are in, run:
   $python create_encodings.py
 ```
 This will simply encode your data.  
-**Run**
+**Run**  
 Finally, to run the program, run main.py. Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
 ```venv
   $python main.py
