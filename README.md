@@ -31,7 +31,7 @@ _Face Recognition_ is **huge**. With the ability to automatically classify someo
 
 ---
 
-#### Installation\
+#### Installation
 
 ```venv
   $git clone https://github.com/dude123studios/SmarterRingV2
@@ -67,13 +67,9 @@ Finally, to run the program, run:
 ```venv
   $python main.py
 ```
-Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
-#### API Reference
-
-A complete documention is explained in my medium article. If you are interesested, you can veiw to documentations to the following dependencies    
-![Requirements](#requirements.txt)  
+Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is.  
 [Back To The Top](#SmarterRingV2)
----
+--- 
 
 ## References
 
