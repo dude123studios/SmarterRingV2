@@ -25,7 +25,7 @@ _Face Recognition_ is **huge**. With the ability to automatically classify someo
 - Deep Learning
 - Ring API
 - Computer Vision 
-- Face Recognition
+- Face Recognition  
 
 [Back To The Top](#SmarterRingV2)
 
@@ -62,12 +62,13 @@ Once all the images are in, run:
   $python create_encodings.py
 ```
 This will simply encode your data.  
-**Run**  
+**Run**
 Finally, to run the program, run main.py. Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
 ```venv
   $python main.py
-```
+```  
 [Back To The Top](#SmarterRingV2)
+
 --- 
 
 ## References
@@ -76,7 +77,7 @@ Finally, to run the program, run main.py. Leave it running. Once anyone rings yo
 - https://arxiv.org/abs/1503.03832
 - https://gtts.readthedocs.io/en/latest/module.html
 - https://pypi.org/project/playsound/
-- https://pypi.org/project/mtcnn/
+- https://pypi.org/project/mtcnn/  
 [Back To The Top](#SmarterRingV2)
 --- 
 
@@ -86,7 +87,7 @@ Finally, to run the program, run main.py. Leave it running. Once anyone rings yo
 - Location: California USA
 - Age: 13
 - Hobbies: Math, Programming, Minecraft 
-- Email: dude123studios@gmail.com
+- Email: dude123studios@gmail.com  
 [Back To The Top](#SmarterRingV2)
 
 
