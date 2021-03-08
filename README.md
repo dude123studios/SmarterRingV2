@@ -37,7 +37,7 @@ _Face Recognition_ is **huge**. With the ability to automatically classify someo
   $git clone https://github.com/dude123studios/SmarterRingV2
   $pip install requirements.txt
 ```
-## How To Use
+##### How To Use
 
 **Prerequisites** 
 Set environment variables, _USERNAME_ and _PASSWORD_, and equate them to your _Amazon Ring_ acount's username and password
@@ -49,7 +49,7 @@ In order to submit the faces of your family members, or those who you would like
 ```venv
   $python submit_face.py name False
 ```
-or:
+- or:
 ```venv
   $python submit_face.py name True
 ```
@@ -61,13 +61,12 @@ Once all the images are in, run:
 ```venv
   $python create_encodings.py
 ```
-This will simply encode your data.
+This will simply encode your data.  
 **Run**  
-Finally, to run the program, run:
+Finally, to run the program, run main.py. Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
 ```venv
   $python main.py
 ```
-Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is.  
 [Back To The Top](#SmarterRingV2)
 --- 
 
