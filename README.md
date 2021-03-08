@@ -54,7 +54,8 @@ or:
   $python submit_face.py name True
 ```
 In the first case, a popup will show on your screen using your webcam. Hit the space bar when ready to record an image of "name". Do so multiple times from different angles. Once done, hit the escape button to close the program. 
-In the second case, data will be grabbed directly from your ring doorbell."name" is the name of the person who was at your doorbell last when it was rung. This method will reach higher accuracy.   
+In the second case, data will be grabbed directly from your ring doorbell."name" is the name of the person who was at your doorbell last when it was rung. This method will reach higher accuracy.
+  
 **Encode Data**  
 Once all the images are in, run:
 ```venv
@@ -69,14 +70,20 @@ Finally, to run the program, run:
 Leave it running. Once anyone rings your doorbell, you will have a loud Text-To-Speech played automatically on your device informing you who it is. 
 #### API Reference
 
-A complete documention is explained in my medium article : 
+A complete documention is explained in my medium article.  
+If you are interesested, you can veiw to documentations to the following dependencies 
+[Requirements](#requirements.txt)
 [Back To The Top](#SmarterRingV2)
-
 ---
 
 ## References
-[Back To The Top](#SmarterRingV2)
 
+- https://github.com/tchellomello/python-ring-doorbell
+- https://arxiv.org/abs/1503.03832
+- https://gtts.readthedocs.io/en/latest/module.html
+- https://pypi.org/project/playsound/
+- https://pypi.org/project/mtcnn/
+[Back To The Top](#SmarterRingV2)
 --- 
 
 ## Author Info
@@ -84,7 +91,8 @@ A complete documention is explained in my medium article :
 - Name: Atharv N.
 - Location: California USA
 - Age: 13
-
+- Hobbies: Math, Programming, Minecraft 
+- Email: dude123studios@gmail.com
 [Back To The Top](#SmarterRingV2)
 
 
