@@ -7,7 +7,7 @@
 ---
 
 ### Table of Contents
-You're sections headers will be used to reference location of destination.
+Medium Blog: https://dude123studios.medium.com/face-recognition-at-your-doorbell-1e6f250f2ee9
 
 - [Description](#description)
 - [How To Use](#how-to-use)
